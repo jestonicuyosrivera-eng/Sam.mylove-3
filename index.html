@@ -1,51 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Be My Valentine?</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-    body {
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(135deg, #ff758c, #ff7eb3);
-        font-family: Arial, sans-serif;
-        overflow: hidden;
-    }
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:pink;
+  font-family:Arial;
+  overflow:hidden;
+}
+.container{
+  text-align:center;
+}
+button{
+  padding:15px 25px;
+  font-size:18px;
+  margin:10px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+#yes{background:#ff4d6d;color:white;}
+#no{background:white;color:#ff4d6d;position:absolute;}
+#message{display:none;font-size:24px;margin-top:20px;}
+</style>
+</head>
+<body>
 
-    .container {
-        text-align: center;
-        position: relative;
-    }
+<div class="container">
+<h1>Will You Be My Valentine? 💖</h1>
+<button id="yes">Yes ❤️</button>
+<button id="no">No 💔</button>
+<div id="message">Yay!!! 🥰💘</div>
+</div>
 
-    h1 {
-        color: white;
-        font-size: 2.5em;
-    }
+<script>
+const no=document.getElementById("no");
+const yes=document.getElementById("yes");
+const msg=document.getElementById("message");
 
-    button {
-        padding: 15px 30px;
-        font-size: 1.1em;
-        border: none;
-        border-radius: 25px;
-        cursor: pointer;
-        margin: 10px;
-        transition: 0.3s;
-    }
+no.addEventListener("mouseover",()=>{
+  no.style.left=Math.random()*window.innerWidth+"px";
+  no.style.top=Math.random()*window.innerHeight+"px";
+});
 
-    #yesBtn {
-        background-color: #ff2e63;
-        color: white;
-    }
+yes.addEventListener("click",()=>{
+  msg.style.display="block";
+});
+</script>
 
-    #yesBtn:hover {
-        transform: scale(1.1);
-    }
-
-    #noBtn {
-        background-color: white;
-        color: #ff2e63;
+</body>
+</html>
